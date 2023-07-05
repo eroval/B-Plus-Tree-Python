@@ -42,13 +42,13 @@ class BPlusTree:
     def __delete_key__(self, node, key):
         if node.is_leaf:
             index = 0
-            while index < len(node.keys) and key > node.keys[index]:
+            while index < len(node.keys) and str(key) > str(node.keys[index]):
                 index += 1
             if index < len(node.keys) and key == node.keys[index]:
                 node.keys.pop(index)
         else:
             index = 0
-            while index < len(node.keys) and key > node.keys[index]:
+            while index < len(node.keys) and str(key) > str(node.keys[index]):
                 index += 1
             if index < len(node.keys) and key == node.keys[index]:
                 self.__delete_internal_key__(node, key, index)
@@ -165,4 +165,7 @@ if __name__=="__main__":
     print(a.__contains__("cool 10"))
     a.insert(20)
     a.insert(30)
+    a.insert(30.12353)
+    a.delete(20)
+    a.delete(30.12353)
     a.print_tree()
