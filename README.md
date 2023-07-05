@@ -5,7 +5,7 @@
  - Printing
 
 ### Order
-The default order of the tree is **5**. However, it is possible to change it.\
+The default order of the tree is five. However, it is possible to change it.\
 Simply pass the arguement `order=[input]` when calling the class.
 
 ### Type support
