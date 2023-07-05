@@ -6,7 +6,7 @@ class BPlusTree:
             self.is_leaf = is_leaf
             self.next_leaf = None
 
-    def __init__(self, order):
+    def __init__(self, order=5):
         self.root = self.Node(is_leaf=True)
         self.order = order
 
@@ -158,7 +158,7 @@ class BPlusTree:
 
 
 if __name__=="__main__":
-    a = BPlusTree(5) 
+    a = BPlusTree() 
     for i in range (0, 25):
         a.insert(f"cool {i}")
 
